@@ -19,9 +19,11 @@ console.log(word1+word2+word3+word4);
 // я бы убрал один пробел и добавил одну запятую
 
 // 3. Вывод дня, месяца и года с помощью алерта
-// let date = new Date();
-// let formattedDate = date.toDateString();
-// alert(formattedDate);
+let date = new Date();
+let day = String(date.getDate());
+let month = String(date.getMonth()+1);
+let year = String(date.getFullYear());
+alert(`День ${day},` + ` месяц ${month},` + ` год ${year}`);
 
 // 4. Создайте на странице div с id=one.
 // С помощью document.getElementById запишите в данный элемент текст 'Hello World'.

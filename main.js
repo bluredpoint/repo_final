@@ -1,19 +1,31 @@
-// 1. С помощью оператора if else сделать проверку:
-// если число больше 100 – вывод на страницу, если число меньше 100 - вывод числа в консоль.
+// 1. Написать программу, которая будет выводить в консоль сообщение ДА, если сумма
+// переменной а + б будет больше 15, и выводить сообщение НЕТ,
+// если сумма этих чисел будет меньше или равно 15
 
-let checkButton = document.querySelector('.btn');
-let checkInput = document.querySelector('.inpt');
+// 2. Написать программу, которая должна выполнить проверку значений 2 переменных и, если они
+// равны, то выводить сообщение в консоль о том, что они равны или получать результат true,
+// в противном случае false, при этом в обе переменные можно вписать разные типы данных,
+// это нужно учесть и задействовать оператор строгого равенства при сравнении
+
+let checkButton = document.querySelector(".btn");
+let checkInputA = document.querySelector(".inpt1");
+let checkInputB = document.querySelector(".inpt2");
 
 checkButton.onclick = function () {
-    let a = checkInput.value
+  let a = checkInputA.value;
+  let b = checkInputB.value;
+  c = Number(a) + Number(b);
 
-    if (a>100) {
-        document.getElementById('one').innerHTML += `<li>${a}</li>`
-    } else {
-        if (a==100) {
-            alert("Все сломалось жесть")
-        } else {
-            console.log(a)
-        }
-    }
+  console.log(c);
+  if (c > 15) {
+    console.log("ДА");
+  } else {
+    console.log("НЕТ");
+  }
+
+  if (a == b) {
+    console.log("кстати, эти переменные равны");
+  } else {
+    console.log("эти переменные не равны");
+  }
 };

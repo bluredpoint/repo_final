@@ -1,31 +1,46 @@
-// 1. Написать программу, которая будет выводить в консоль сообщение ДА, если сумма
-// переменной а + б будет больше 15, и выводить сообщение НЕТ,
-// если сумма этих чисел будет меньше или равно 15
+// 1 Вывести строку данных от 1 до 50 с помощью цикла
 
-// 2. Написать программу, которая должна выполнить проверку значений 2 переменных и, если они
-// равны, то выводить сообщение в консоль о том, что они равны или получать результат true,
-// в противном случае false, при этом в обе переменные можно вписать разные типы данных,
-// это нужно учесть и задействовать оператор строгого равенства при сравнении
+// while
+let i = 1;
+while (i <= 50) {
+  console.log(i);
+  i++;
+}
 
-let checkButton = document.querySelector(".btn");
-let checkInputA = document.querySelector(".inpt1");
-let checkInputB = document.querySelector(".inpt2");
+// for
+for (let i = 1; i <= 50; i++) {
+  console.log(i);
+}
 
-checkButton.onclick = function () {
-  let a = checkInputA.value;
-  let b = checkInputB.value;
-  c = Number(a) + Number(b);
+// 2 Вывести числа от 50 до 25 с помощью цикла
 
-  console.log(c);
-  if (c > 15) {
-    console.log("ДА");
-  } else {
-    console.log("НЕТ");
+// while
+let i = 50;
+while (i >= 25) {
+  console.log(i);
+  i--;
+}
+
+// for
+for (let i = 50; i >= 25; i--) {
+  console.log(i);
+}
+
+// 3 Вывести все нечетные числа от 2500 до 3000 с помощью цикла
+//while
+let i = 2500;
+while (i < 3000) {
+  // if (i % 2 == 0) {
+  //   continue;             <----- почему-то эта часть намертво завешивает браузер
+  // }
+  console.log(i);
+  i++;
+}
+
+// for
+for (let i = 2500; i < 3000; i++) {
+  if (i % 2 == 0) {
+    continue;
   }
-
-  if (a == b) {
-    console.log("кстати, эти переменные равны");
-  } else {
-    console.log("эти переменные не равны");
-  }
-};
+  console.log(i);
+}

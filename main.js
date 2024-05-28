@@ -1,55 +1,58 @@
-// 1 Написать конструкцию switch case, которая будет сравнивать значения 2 переменных:
-// одна из которых записана по умолчанию, 2 задается через promt.
-// Выполнить сравнения вида = верно – да / не верно – нет  / не сработало вывести сообщение не сработало
+// 1 Напишите функцию именную, которая при нажатии кнопки выводит в блок див
+// на странице значения из переменной A.
 
-// let a = 15;
-// let b = prompt('Введите число');
+let buttonGetVar = document.querySelector('.btn1');
+let checkInput = document.querySelector('.inpt1');
 
-// switch (a) {
-//   case +b: 
-//     alert ("да");
-//     break;
-//   case b: 
-//     alert ("не сработало");
-//     break;
-//   default:
-//     alert ("нет");
-//     break;
-// };
+function one() {
+    let a = checkInput.value;
+    document.getElementById('one').innerHTML += `<li>${a}</li>`
+};
 
-// 2 Написать алгоритм при котором у конструкции есть 4 значения, если пользователь вводит числа
-// от 1 до 3 то выводим сообщение – зима, от 3 -6 – весна, от 6-9 – лето от 9 до 12 – осень.
-
-// let a = 8;
-
-// switch (a) {
-//   case 1:  
-//   case 2:  
-//   case 3:  
-//     alert ("зима");
-//     break;
-//   case 4:  
-//   case 5:  
-//   case 6:  
-//     alert ("весна");
-//     break;
-//   case 7:  
-//   case 8:  
-//   case 9: 
-//     alert ("лето");
-//     break;
-//   case 10:  
-//   case 11:  
-//   case 12:  
-//     alert ("осень");
-//     break;
-// };
+buttonGetVar.onclick = one;
 
 
+// 2 Напишите простой калькулятор из 4 выражений + - * / для этого сделайте 4 кнопки и поле ввода,
+// затем при вводе каждого числа и после при нажатии на кнопку должна выполнится одна из функций,
+// в зависимости от того какую кнопку мы нажали
 
-// 3 Создать 3 переменные, одну из них сделать null и выполнить проверку используя оператор нулевого слияния
+let num1 = document.querySelector('.inpt2');
+let num2 = document.querySelector('.inpt3');
 
-// let a = 1;
-// let b;
-// let c = 4;
-// alert (a ?? b ?? c ?? 'Аноним');
+let buttonPlus = document.querySelector('.btn_plus');
+let buttonMinus = document.querySelector('.btn_minus');
+let buttonUmn = document.querySelector('.btn_umn');
+let buttonDel = document.querySelector('.btn_del');
+
+function slozhenie() {
+    let x = +num1.value;
+    let y = +num2.value;
+    let i = x + y;
+    document.getElementById('two').innerHTML += `<li>${i}</li>`
+};
+
+function vichetanie() {
+    let x = +num1.value;
+    let y = +num2.value;
+    let i = x - y;
+    document.getElementById('two').innerHTML += `<li>${i}</li>`
+};
+
+function umnozhenie() {
+    let x = +num1.value;
+    let y = +num2.value;
+    let i = x * y;
+    document.getElementById('two').innerHTML += `<li>${i}</li>`
+};
+
+function delenie() {
+    let x = +num1.value;
+    let y = +num2.value;
+    let i = x / y;
+    document.getElementById('two').innerHTML += `<li>${i}</li>`
+};
+
+buttonPlus.onclick = slozhenie;
+buttonMinus.onclick = vichetanie;
+buttonUmn.onclick = umnozhenie;
+buttonDel.onclick = delenie;

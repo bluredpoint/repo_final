@@ -1,23 +1,54 @@
-let buttonTwo = document.querySelector('.btn2');
+// 1 Создайте сет и добавьте в него элементы 'e' 'r' 'i' 'k' 't' 'h' 'e' 'b' 'e' 's' 't' через add и вывод в консоль
+// 2 Создать кнопку и поле для ввода и написать функцию которая будет добавлять в этот набор, которые пользователи будут вводить в поля ввода, инпут
+// 3 Создать кнопку и функцию, которая будет делать проверку, если введенный пользователем элемент есть, то выводим под кнопку запись true, если нет - false
+// 4 Создать функцию, при нажатии на кнопку она перебирает массив с помощью for of и возвращает нам новый массив, куда входят все элементы больше 5 (массив произвольный)
 
-function getWeather() {
-fetch('https://api.openweathermap.org/data/2.5/weather?q=Tomsk&lang=ru&appid=c37610323e6001d78ebd0a2e6f1bbbd5')
+let checkInput = document.querySelector(".inpt");
+let addButton = document.querySelector(".btnAdd");
+let checkButton = document.querySelector(".btnCheck");
+let enumButton = document.querySelector(".btnEnum");
+let checkLabel = document.querySelector(".labl");
 
-.then (function (resp) {return resp.json()})
-.then (function(data) {
-    console.log(data)
-    document.querySelector('.city-name').innerHTML = data.name
-    document.querySelector('.temp').textContent = Math.round((data.main.temp - 273))
-    document.querySelector('.weather').textContent = data.weather[0].description
-    document.querySelector('.icon').innerHTML = `<image src = https://api.openweathermap.org/img/w/${data.weather[0].icon}>`
+const a = new Set();
 
-    document.querySelector('.humidity').textContent = `Влажность - ${data.main.humidity}`
-    document.querySelector('.wind').textContent = `Скорость ветра - ${data.wind.speed}`
-    document.querySelector('.country').textContent = `Страна - ${data.sys.country}`
-    const sunriseDate = data.sys.sunrise
-    const sunsetDate = data.sys.sunset
-    document.querySelector('.sunrise').textContent = `Восход - ${new Date(sunriseDate)}`
-    document.querySelector('.sunset').textContent = `Закат - ${new Date(sunsetDate)}`
-})
+a.add('e');
+a.add('r');
+a.add('i');
+a.add('k');
+a.add('t');
+a.add('h');
+a.add('e');
+a.add('b');
+a.add('e');
+a.add('s');
+a.add('t');
+
+console.log(a);
+
+addButton.onclick = function () {
+    let b = a.size
+    a.add(checkInput.value);
+    if (a.size===b){
+    console.log("Сет не претерпел изменений", a);
+    }
+    else{
+    console.log("Сет успешно обновлен", a);
+    }
 };
-buttonTwo.onclick = getWeather;
+
+checkButton.onclick = function () {
+    document.getElementById('labl').innerHTML += `<li>${a.has(checkInput.value)}</li>`
+};
+
+
+//   enumButton.onclick = function () {
+//     const array = Array.from(a);
+//     const m = [];
+//     for (i of array) {
+//         if (i>5){
+//             m.push = i
+//         }
+//     }
+//     console.log(m);
+//   };
+  

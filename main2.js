@@ -31,25 +31,15 @@ function addTask() {
     // Очищаем поле ввода
     input.value = '';
   }
-  if (tasks.length > 0) {
-    // Удаляем блок с текстом «Нет задач для отображения»
-    document.querySelector('.no-tasks-message').remove();
-  } 
 }
 
 function deleteTask(task) {
   task.remove();
-
-  if (tasks.length == 0) {
-    // Добавляем блок с текстом «Нет задач для отображения», если задач нет
-    document.querySelector('.tasks-content').insertAdjacentHTML('beforeend', '<span class="no-tasks-message">Нет задач для отображения</span>');
-  }
   updateCounts();
 }
 
 function markTaskCompleted(task) {
   task.classList.add('finished');
-  task.style.textDecoration = 'line-through';
   updateCounts();
 }
 
@@ -66,6 +56,15 @@ function updateCounts() {
     }
   });
   completedCount.innerText = completedTasks;
+
+  // Проверяем наличие задач
+  if (tasks.length > 0) {
+    // Удаляем блок с текстом «Нет задач для отображения»
+    document.querySelector('.no-tasks-message').remove();
+  } else {
+    // Добавляем блок с текстом «Нет задач для отображения», если задач нет
+    document.querySelector('.tasks-content').insertAdjacentHTML('beforeend', '<span class="no-tasks-message">Нет задач для отображения</span>');
+  }
 }
 
 // Привязываем события

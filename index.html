@@ -1,19 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS для домохозяек</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body><br>
-    <input type="text" class="inpt"><br><br>
-    <button class="btnAdd">Добавить</button>
-    <button class="btnCheck">Проверить</button>
-    <button class="btnEnum">Перебрать</button>
-    <h3><ol><div id="labl"></div></ol></h3>
-    <div class="element"></div>
 
+<body>
 
-    <script src="main.js"></script>
+    <div class="todo-container">
+        <div class="add-task">
+            <input type="text">
+            <span class="plus">+/-</span>
+        </div>
+        <div class="tasks-content">
+            <span class="no-tasks-message">Нет задач для отображения</span>
+        </div>
+    </div>
+    <div class="task-stats">
+        <div class="tasks-count">
+            Задачи <span>0</span>
+        </div>
+        <div class="tasks-completed">
+            Выполнено <span>0</span>
+        </div>
+    </div>
+    <script src="main2.js"></script>
+
 </body>
+
 </html>
